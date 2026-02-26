@@ -1,9 +1,14 @@
-echo "Enter a year:"
-read year
+echo "Enter a number:"
+read n
 
-if [ $((year % 400)) -eq 0 ] || { [ $((year % 4)) -eq 0 ] && [ $((year % 100)) -ne 0 ]; }
-then
-    echo "Leap year"
-else
-    echo "Not a leap year"
-fi
+fact=1
+i=1
+
+while [ $i -le $n ]
+do
+    fact=$((fact * i))
+    i=$((i + 1))
+done
+
+echo "Factorial = $fact"
+
